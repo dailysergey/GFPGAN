@@ -1,5 +1,5 @@
 # libraries
-from models.model import MobNetSimpsons
+
 import gc
 import os
 import sys
@@ -12,8 +12,8 @@ from PIL import Image
 import cv2
 import torch
 # custom libraries
-# sys.path.append('models')
-
+sys.path.append('models')
+from models.model import MobNetSimpsons
 
 # download with progress bar
 mybar = None
