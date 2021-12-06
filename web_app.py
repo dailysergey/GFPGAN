@@ -1,5 +1,6 @@
 # libraries
 
+from models.model import MobNetSimpsons
 import gc
 import os
 import sys
@@ -13,7 +14,6 @@ import cv2
 import torch
 # custom libraries
 sys.path.append('models')
-from models.model import MobNetSimpsons
 
 # download with progress bar
 mybar = None
@@ -110,7 +110,7 @@ if st.button('Compute prediction'):
         if not os.path.isfile(model_path + 'pytorch_model.pth'):
             with st.spinner('Downloading model weights. This is done once and can take a minute...'):
                 urllib.request.urlretrieve(
-                    weight_path, model_path + f'{model_name}.pth', show_progress)
+                    weight_path, model_path + f'pytorch_model.pth', show_progress)
         # compute predictions
         with st.spinner('Computing prediction...'):
 
