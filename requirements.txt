@@ -1,5 +1,5 @@
 scikit-learn==0.24.2
-torch==1.8.0
+torch==1.8.1
 torchvision==0.9.1
 timm==0.4.12
 albumentations==1.0.3
