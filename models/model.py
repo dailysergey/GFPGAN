@@ -21,9 +21,9 @@ models_numfeatures={
 }
 
 model_weights={
-    "VGG16": '',
-    "mobNetv3small": '',
-    "mobNetLarge": ''
+    "VGG16": 'https://github.com/dailysergey/streamlit-simpsons/releases/download/models/vgg_16.pth',
+    "mobNetv3small": 'https://github.com/dailysergey/streamlit-simpsons/releases/download/models/mobNetv3small.pth',
+    "mobNetLarge": 'https://github.com/dailysergey/streamlit-simpsons/releases/download/models/mobNetLarge.pth'
 }
 
 class MobNetSimpsons():
