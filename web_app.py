@@ -2,7 +2,8 @@
 import gc
 import os
 import sys
-import urllib.request
+
+import urllib
 import requests
 import numpy as np
 import pandas as pd
@@ -108,10 +109,9 @@ if st.button('Compute prediction'):
         # download model weights
         if not os.path.isfile(model_path + 'pytorch_model.pth'):
             with st.spinner('Downloading model weights. This is done once and can take a minute...'):
-                resp = None
                 try:
                     print('Model is loading')
-                    resp = urllib.request.urlretrieve(weight_path, model_path + 'pytorch_model.pth', show_progress)
+                    urllib.request.urlretrieve(weight_path, model_path + 'pytorch_model.pth', show_progress)
                     st.success(f'{model_name} is loaded')
                 except Exception as e:
                     st.error(f'{model_name} is Not loaded. Error Text: {e}, Resp: {resp}')
