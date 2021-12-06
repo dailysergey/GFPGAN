@@ -1,6 +1,4 @@
 # libraries
-
-
 import gc
 import os
 import sys
@@ -15,9 +13,10 @@ import torch
 # custom libraries
 sys.path.append('models')
 from models.model import MobNetSimpsons
+
+
 # download with progress bar
 mybar = None
-
 
 def show_progress(block_num, block_size, total_size):
     global mybar
@@ -97,21 +96,23 @@ if st.button('Compute prediction'):
     else:
         # specify paths
         if model_name == 'mobNetv3small':
-            weight_path = 'https://github.com/dailysergey/Pet-Pawpularity/releases/download/model-weights/enet_b3.pth'
+            weight_path = 'https://github.com/dailysergey/streamlit-simpsons/releases/download/models/mobNetv3small.pth'
             model_path = 'models/mobNetv3small/'
         elif model_name == 'VGG16':
             weight_path = 'https://github.com/dailysergey/streamlit-simpsons/releases/download/models/vgg_16.pth'
             model_path = 'models/vgg16/'
         elif model_name == 'mobNetLarge':
-            weight_path = 'https://github.com/dailysergey/Pet-Pawpularity/releases/download/model-weights/swin_base.pth'
+            weight_path = 'https://github.com/dailysergey/streamlit-simpsons/releases/download/models/mobNetLarge.pth'
             model_path = 'models/mobNetLarge/'
 
         # download model weights
         if not os.path.isfile(model_path + 'pytorch_model.pth'):
             with st.spinner('Downloading model weights. This is done once and can take a minute...'):
+                print('Model is loading')
                 urllib.request.urlretrieve(
                     weight_path, model_path + 'pytorch_model.pth', show_progress)
-        
+                print('Model is loaded')
+
         # compute predictions
         with st.spinner('Computing prediction...'):
 
