@@ -9,9 +9,9 @@ from models.utils import *
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 models_init={
-"VGG16": models.vgg16(pretrained=True),
-"mobNetv3small": models.mobilenet_v3_small(pretrained=True),
-"mobNetLarge": models.mobilenet_v3_large(pretrained=True)
+"VGG16": models.vgg16(),
+"mobNetv3small": models.mobilenet_v3_small(),
+"mobNetLarge": models.mobilenet_v3_large()
 }
 
 models_numfeatures={
