@@ -109,8 +109,7 @@ if st.button('Compute prediction'):
         if not os.path.isfile(model_path + 'pytorch_model.pth'):
             with st.spinner('Downloading model weights. This is done once and can take a minute...'):
                 print('Model is loading')
-                urllib.request.urlretrieve(
-                    weight_path, model_path + 'pytorch_model.pth', show_progress)
+                urllib.request.urlretrieve(weight_path, model_path + 'pytorch_model.pth', show_progress)
                 print('Model is loaded')
 
         # compute predictions
