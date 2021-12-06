@@ -1,0 +1,12 @@
+scikit-learn==0.24.2
+torch==1.8.1
+torchvision==0.9.1
+timm==0.4.12
+albumentations==1.0.3
+transformers==4.8.1
+#numpy==1.19.2
+pandas==1.2.3
+opencv-python-headless==4.5.1.48
+pillow==8.3.2
+requests==2.25.1
+streamlit==1.2.0
