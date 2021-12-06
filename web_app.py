@@ -108,9 +108,12 @@ if st.button('Compute prediction'):
         # download model weights
         if not os.path.isfile(model_path + 'pytorch_model.pth'):
             with st.spinner('Downloading model weights. This is done once and can take a minute...'):
-                print('Model is loading')
-                urllib.request.urlretrieve(weight_path, model_path + 'pytorch_model.pth', show_progress)
-                print('Model is loaded')
+                try:
+                    print('Model is loading')
+                    urllib.request.urlretrieve(weight_path, model_path + 'pytorch_model.pth', show_progress)
+                    st.success(f'{model_name} is loaded')
+                except Exception as e:
+                    st.error(f'{model_name} is Not loaded. Error Text{e}')
 
         # compute predictions
         with st.spinner('Computing prediction...'):
@@ -140,7 +143,7 @@ if st.button('Compute prediction'):
                 gc.collect()
 
                 # remove image from tmp folder
-                os.remove(image_path)
+                #os.remove(image_path)
 
                 # celebrate
                 st.success('Well done! Thanks for scoring your character :)')
