@@ -110,10 +110,10 @@ if st.button('Compute prediction'):
             with st.spinner('Downloading model weights. This is done once and can take a minute...'):
                 try:
                     print('Model is loading')
-                    urllib.request.urlretrieve(weight_path, model_path + 'pytorch_model.pth', show_progress)
+                    resp = urllib.request.urlretrieve(weight_path, model_path + 'pytorch_model.pth', show_progress)
                     st.success(f'{model_name} is loaded')
                 except Exception as e:
-                    st.error(f'{model_name} is Not loaded. Error Text{e}')
+                    st.error(f'{model_name} is Not loaded. Error Text: {e}, Resp: {resp}')
 
         # compute predictions
         with st.spinner('Computing prediction...'):
