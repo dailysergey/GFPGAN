@@ -54,7 +54,7 @@ st.image(cover_image)
 
 # description
 st.write(
-    "This app uses deep learning to estimate a CV Image classification task of Springfield character. [Research](https://www.kaggle.com/dailysergey/simpsons-image-classification-task) can be found in my [Kaggle profile](https://www.kaggle.com/dailysergey).")
+    "This app uses deep learning to classify Springfield character, it's pretty straight forward of Image Classification Task. Welcome to [GitHub Repo](https://github.com/dailysergey/streamlit-simpsons). [Research](https://www.kaggle.com/dailysergey/simpsons-image-classification-task) can be found in my [Kaggle profile](https://www.kaggle.com/dailysergey).")
 
 
 # PARAMETERS
@@ -106,7 +106,7 @@ if st.button('Compute prediction'):
             weight_path = 'https://github.com/dailysergey/streamlit-simpsons/releases/download/models/mobNetLarge.pth'
             model_path = 'models/mobNetLarge/'
 
-        
+
         # download model weights
         if not os.path.isfile(model_path + 'pytorch_model.pth'):
             with st.spinner('Downloading model weights. This is done once and can take a minute...'):
