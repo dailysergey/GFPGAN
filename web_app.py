@@ -106,6 +106,7 @@ if st.button('Compute prediction'):
             weight_path = 'https://github.com/dailysergey/streamlit-simpsons/releases/download/models/mobNetLarge.pth'
             model_path = 'models/mobNetLarge/'
 
+        
         # download model weights
         if not os.path.isfile(model_path + 'pytorch_model.pth'):
             with st.spinner('Downloading model weights. This is done once and can take a minute...'):
